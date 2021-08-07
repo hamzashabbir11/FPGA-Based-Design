@@ -1,0 +1,6 @@
+EN lcd_driver NULL C:/Users/Students/Desktop/3_lcd_driver_vhd.vhd sub00/vhpl00 1624962860
+MO test_watch NULL C:/Users/Students/Desktop/Hamza/test_bench.v vlg0E/test__watch.bin 1624863337
+MO digital_watch NULL C:/Users/Students/Desktop/Hamza/Digital_Watch.v vlg6C/digital__watch.bin 1624962860
+MO counter NULL C:/Users/Students/Desktop/Hamza/Digital_Watch.v vlg10/counter.bin 1624962860
+MO digital_watch_lcd_core NULL LCDTopModule.v vlg02/digital__watch__lcd__core.bin 1624962860
+AR lcd_driver behavioral C:/Users/Students/Desktop/3_lcd_driver_vhd.vhd sub00/vhpl01 1624962861

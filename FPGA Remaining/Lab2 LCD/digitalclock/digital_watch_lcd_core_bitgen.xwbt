@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=E:\digitalclock\digital_watch_lcd_core.ncd
+OUTFILE=E:\digitalclock\digital_watch_lcd_core.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=E:\digitalclock
+LICENSE=WebPack
+USER_INFO=__0_0_0

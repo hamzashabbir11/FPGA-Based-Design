@@ -1,0 +1,910 @@
+--------------------------------------------------------------------------------
+Release 14.2 Trace  (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.2\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 4 -n
+3 -fastpaths -xml digital_watch_lcd_core.twx digital_watch_lcd_core.ncd -o
+digital_watch_lcd_core.twr digital_watch_lcd_core.pcf -ucf UCF.ucf
+
+Design file:              digital_watch_lcd_core.ncd
+Physical constraint file: digital_watch_lcd_core.pcf
+Device,package,speed:     xc3s500e,fg320,-4 (PRODUCTION 1.27 2012-07-09)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: NET "CLK_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 61121 paths analyzed, 460 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  13.288ns.
+--------------------------------------------------------------------------------
+
+Paths for end point i_lcd_driver/counter_7 (SLICE_X50Y6.F2), 1382 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     6.712ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i_lcd_driver/counter_0 (FF)
+  Destination:          i_lcd_driver/counter_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      13.286ns (Levels of Logic = 16)
+  Clock Path Skew:      -0.002ns (0.012 - 0.014)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: i_lcd_driver/counter_0 to i_lcd_driver/counter_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X50Y4.YQ       Tcko                  0.652   i_lcd_driver/counter<1>
+                                                       i_lcd_driver/counter_0
+    SLICE_X51Y4.F2       net (fanout=2)        0.523   i_lcd_driver/counter<0>
+    SLICE_X51Y4.COUT     Topcyf                1.162   i_lcd_driver/state_add0000<0>
+                                                       i_lcd_driver/Madd_state_add0000_lut<0>_INV_0
+                                                       i_lcd_driver/Madd_state_add0000_cy<0>
+                                                       i_lcd_driver/Madd_state_add0000_cy<1>
+    SLICE_X51Y5.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<1>
+    SLICE_X51Y5.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<2>
+                                                       i_lcd_driver/Madd_state_add0000_cy<2>
+                                                       i_lcd_driver/Madd_state_add0000_cy<3>
+    SLICE_X51Y6.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<3>
+    SLICE_X51Y6.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<4>
+                                                       i_lcd_driver/Madd_state_add0000_cy<4>
+                                                       i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<16>
+                                                       i_lcd_driver/Madd_state_add0000_cy<16>
+                                                       i_lcd_driver/Madd_state_add0000_cy<17>
+    SLICE_X51Y13.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<17>
+    SLICE_X51Y13.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<18>
+                                                       i_lcd_driver/Madd_state_add0000_cy<18>
+                                                       i_lcd_driver/Madd_state_add0000_cy<19>
+    SLICE_X51Y14.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<19>
+    SLICE_X51Y14.Y       Tciny                 0.869   i_lcd_driver/state_add0000<20>
+                                                       i_lcd_driver/Madd_state_add0000_cy<20>
+                                                       i_lcd_driver/Madd_state_add0000_xor<21>
+    SLICE_X53Y10.G1      net (fanout=5)        1.088   i_lcd_driver/state_add0000<21>
+    SLICE_X53Y10.COUT    Topcyg                1.001   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_lut<7>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>_1
+    SLICE_X53Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+    SLICE_X53Y11.XB      Tcinxb                0.404   i_lcd_driver/state_cmp_ge0002
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<8>_1
+    SLICE_X53Y23.F3      net (fanout=6)        1.302   i_lcd_driver/state_cmp_ge0002
+    SLICE_X53Y23.X       Tilo                  0.704   i_lcd_driver/state_FSM_FFd1
+                                                       i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y12.G4      net (fanout=2)        1.146   i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y12.Y       Tilo                  0.759   i_lcd_driver/counter<5>
+                                                       i_lcd_driver/counter_mux0001<0>325
+    SLICE_X50Y6.F2       net (fanout=13)       1.722   N01
+    SLICE_X50Y6.CLK      Tfck                  0.892   i_lcd_driver/counter<7>
+                                                       i_lcd_driver/counter_mux0001<18>1
+                                                       i_lcd_driver/counter_7
+    -------------------------------------------------  ---------------------------
+    Total                                     13.286ns (7.505ns logic, 5.781ns route)
+                                                       (56.5% logic, 43.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.837ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i_lcd_driver/counter_0 (FF)
+  Destination:          i_lcd_driver/counter_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      13.161ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.002ns (0.012 - 0.014)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: i_lcd_driver/counter_0 to i_lcd_driver/counter_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X50Y4.YQ       Tcko                  0.652   i_lcd_driver/counter<1>
+                                                       i_lcd_driver/counter_0
+    SLICE_X51Y4.F2       net (fanout=2)        0.523   i_lcd_driver/counter<0>
+    SLICE_X51Y4.COUT     Topcyf                1.162   i_lcd_driver/state_add0000<0>
+                                                       i_lcd_driver/Madd_state_add0000_lut<0>_INV_0
+                                                       i_lcd_driver/Madd_state_add0000_cy<0>
+                                                       i_lcd_driver/Madd_state_add0000_cy<1>
+    SLICE_X51Y5.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<1>
+    SLICE_X51Y5.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<2>
+                                                       i_lcd_driver/Madd_state_add0000_cy<2>
+                                                       i_lcd_driver/Madd_state_add0000_cy<3>
+    SLICE_X51Y6.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<3>
+    SLICE_X51Y6.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<4>
+                                                       i_lcd_driver/Madd_state_add0000_cy<4>
+                                                       i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.Y       Tciny                 0.869   i_lcd_driver/state_add0000<16>
+                                                       i_lcd_driver/Madd_state_add0000_cy<16>
+                                                       i_lcd_driver/Madd_state_add0000_xor<17>
+    SLICE_X53Y10.F1      net (fanout=5)        1.038   i_lcd_driver/state_add0000<17>
+    SLICE_X53Y10.COUT    Topcyf                1.162   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_lut<6>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<6>_1
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>_1
+    SLICE_X53Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+    SLICE_X53Y11.XB      Tcinxb                0.404   i_lcd_driver/state_cmp_ge0002
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<8>_1
+    SLICE_X53Y23.F3      net (fanout=6)        1.302   i_lcd_driver/state_cmp_ge0002
+    SLICE_X53Y23.X       Tilo                  0.704   i_lcd_driver/state_FSM_FFd1
+                                                       i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y12.G4      net (fanout=2)        1.146   i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y12.Y       Tilo                  0.759   i_lcd_driver/counter<5>
+                                                       i_lcd_driver/counter_mux0001<0>325
+    SLICE_X50Y6.F2       net (fanout=13)       1.722   N01
+    SLICE_X50Y6.CLK      Tfck                  0.892   i_lcd_driver/counter<7>
+                                                       i_lcd_driver/counter_mux0001<18>1
+                                                       i_lcd_driver/counter_7
+    -------------------------------------------------  ---------------------------
+    Total                                     13.161ns (7.430ns logic, 5.731ns route)
+                                                       (56.5% logic, 43.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.845ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i_lcd_driver/counter_4 (FF)
+  Destination:          i_lcd_driver/counter_7 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      13.155ns (Levels of Logic = 14)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: i_lcd_driver/counter_4 to i_lcd_driver/counter_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X50Y10.YQ      Tcko                  0.652   i_lcd_driver/counter<17>
+                                                       i_lcd_driver/counter_4
+    SLICE_X51Y6.F3       net (fanout=2)        0.628   i_lcd_driver/counter<4>
+    SLICE_X51Y6.COUT     Topcyf                1.162   i_lcd_driver/state_add0000<4>
+                                                       i_lcd_driver/counter<4>_rt
+                                                       i_lcd_driver/Madd_state_add0000_cy<4>
+                                                       i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<16>
+                                                       i_lcd_driver/Madd_state_add0000_cy<16>
+                                                       i_lcd_driver/Madd_state_add0000_cy<17>
+    SLICE_X51Y13.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<17>
+    SLICE_X51Y13.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<18>
+                                                       i_lcd_driver/Madd_state_add0000_cy<18>
+                                                       i_lcd_driver/Madd_state_add0000_cy<19>
+    SLICE_X51Y14.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<19>
+    SLICE_X51Y14.Y       Tciny                 0.869   i_lcd_driver/state_add0000<20>
+                                                       i_lcd_driver/Madd_state_add0000_cy<20>
+                                                       i_lcd_driver/Madd_state_add0000_xor<21>
+    SLICE_X53Y10.G1      net (fanout=5)        1.088   i_lcd_driver/state_add0000<21>
+    SLICE_X53Y10.COUT    Topcyg                1.001   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_lut<7>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>_1
+    SLICE_X53Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+    SLICE_X53Y11.XB      Tcinxb                0.404   i_lcd_driver/state_cmp_ge0002
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<8>_1
+    SLICE_X53Y23.F3      net (fanout=6)        1.302   i_lcd_driver/state_cmp_ge0002
+    SLICE_X53Y23.X       Tilo                  0.704   i_lcd_driver/state_FSM_FFd1
+                                                       i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y12.G4      net (fanout=2)        1.146   i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y12.Y       Tilo                  0.759   i_lcd_driver/counter<5>
+                                                       i_lcd_driver/counter_mux0001<0>325
+    SLICE_X50Y6.F2       net (fanout=13)       1.722   N01
+    SLICE_X50Y6.CLK      Tfck                  0.892   i_lcd_driver/counter<7>
+                                                       i_lcd_driver/counter_mux0001<18>1
+                                                       i_lcd_driver/counter_7
+    -------------------------------------------------  ---------------------------
+    Total                                     13.155ns (7.269ns logic, 5.886ns route)
+                                                       (55.3% logic, 44.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point i_lcd_driver/counter_24 (SLICE_X50Y17.G2), 1382 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     7.230ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i_lcd_driver/counter_0 (FF)
+  Destination:          i_lcd_driver/counter_24 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      12.758ns (Levels of Logic = 16)
+  Clock Path Skew:      -0.012ns (0.009 - 0.021)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: i_lcd_driver/counter_0 to i_lcd_driver/counter_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X50Y4.YQ       Tcko                  0.652   i_lcd_driver/counter<1>
+                                                       i_lcd_driver/counter_0
+    SLICE_X51Y4.F2       net (fanout=2)        0.523   i_lcd_driver/counter<0>
+    SLICE_X51Y4.COUT     Topcyf                1.162   i_lcd_driver/state_add0000<0>
+                                                       i_lcd_driver/Madd_state_add0000_lut<0>_INV_0
+                                                       i_lcd_driver/Madd_state_add0000_cy<0>
+                                                       i_lcd_driver/Madd_state_add0000_cy<1>
+    SLICE_X51Y5.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<1>
+    SLICE_X51Y5.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<2>
+                                                       i_lcd_driver/Madd_state_add0000_cy<2>
+                                                       i_lcd_driver/Madd_state_add0000_cy<3>
+    SLICE_X51Y6.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<3>
+    SLICE_X51Y6.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<4>
+                                                       i_lcd_driver/Madd_state_add0000_cy<4>
+                                                       i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<16>
+                                                       i_lcd_driver/Madd_state_add0000_cy<16>
+                                                       i_lcd_driver/Madd_state_add0000_cy<17>
+    SLICE_X51Y13.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<17>
+    SLICE_X51Y13.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<18>
+                                                       i_lcd_driver/Madd_state_add0000_cy<18>
+                                                       i_lcd_driver/Madd_state_add0000_cy<19>
+    SLICE_X51Y14.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<19>
+    SLICE_X51Y14.Y       Tciny                 0.869   i_lcd_driver/state_add0000<20>
+                                                       i_lcd_driver/Madd_state_add0000_cy<20>
+                                                       i_lcd_driver/Madd_state_add0000_xor<21>
+    SLICE_X53Y10.G1      net (fanout=5)        1.088   i_lcd_driver/state_add0000<21>
+    SLICE_X53Y10.COUT    Topcyg                1.001   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_lut<7>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>_1
+    SLICE_X53Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+    SLICE_X53Y11.XB      Tcinxb                0.404   i_lcd_driver/state_cmp_ge0002
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<8>_1
+    SLICE_X53Y23.F3      net (fanout=6)        1.302   i_lcd_driver/state_cmp_ge0002
+    SLICE_X53Y23.X       Tilo                  0.704   i_lcd_driver/state_FSM_FFd1
+                                                       i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y12.G4      net (fanout=2)        1.146   i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y12.Y       Tilo                  0.759   i_lcd_driver/counter<5>
+                                                       i_lcd_driver/counter_mux0001<0>325
+    SLICE_X50Y17.G2      net (fanout=13)       1.194   N01
+    SLICE_X50Y17.CLK     Tgck                  0.892   i_lcd_driver/counter<25>
+                                                       i_lcd_driver/counter_mux0001<1>1
+                                                       i_lcd_driver/counter_24
+    -------------------------------------------------  ---------------------------
+    Total                                     12.758ns (7.505ns logic, 5.253ns route)
+                                                       (58.8% logic, 41.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     7.355ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i_lcd_driver/counter_0 (FF)
+  Destination:          i_lcd_driver/counter_24 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      12.633ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.012ns (0.009 - 0.021)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: i_lcd_driver/counter_0 to i_lcd_driver/counter_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X50Y4.YQ       Tcko                  0.652   i_lcd_driver/counter<1>
+                                                       i_lcd_driver/counter_0
+    SLICE_X51Y4.F2       net (fanout=2)        0.523   i_lcd_driver/counter<0>
+    SLICE_X51Y4.COUT     Topcyf                1.162   i_lcd_driver/state_add0000<0>
+                                                       i_lcd_driver/Madd_state_add0000_lut<0>_INV_0
+                                                       i_lcd_driver/Madd_state_add0000_cy<0>
+                                                       i_lcd_driver/Madd_state_add0000_cy<1>
+    SLICE_X51Y5.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<1>
+    SLICE_X51Y5.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<2>
+                                                       i_lcd_driver/Madd_state_add0000_cy<2>
+                                                       i_lcd_driver/Madd_state_add0000_cy<3>
+    SLICE_X51Y6.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<3>
+    SLICE_X51Y6.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<4>
+                                                       i_lcd_driver/Madd_state_add0000_cy<4>
+                                                       i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.Y       Tciny                 0.869   i_lcd_driver/state_add0000<16>
+                                                       i_lcd_driver/Madd_state_add0000_cy<16>
+                                                       i_lcd_driver/Madd_state_add0000_xor<17>
+    SLICE_X53Y10.F1      net (fanout=5)        1.038   i_lcd_driver/state_add0000<17>
+    SLICE_X53Y10.COUT    Topcyf                1.162   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_lut<6>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<6>_1
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>_1
+    SLICE_X53Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+    SLICE_X53Y11.XB      Tcinxb                0.404   i_lcd_driver/state_cmp_ge0002
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<8>_1
+    SLICE_X53Y23.F3      net (fanout=6)        1.302   i_lcd_driver/state_cmp_ge0002
+    SLICE_X53Y23.X       Tilo                  0.704   i_lcd_driver/state_FSM_FFd1
+                                                       i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y12.G4      net (fanout=2)        1.146   i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y12.Y       Tilo                  0.759   i_lcd_driver/counter<5>
+                                                       i_lcd_driver/counter_mux0001<0>325
+    SLICE_X50Y17.G2      net (fanout=13)       1.194   N01
+    SLICE_X50Y17.CLK     Tgck                  0.892   i_lcd_driver/counter<25>
+                                                       i_lcd_driver/counter_mux0001<1>1
+                                                       i_lcd_driver/counter_24
+    -------------------------------------------------  ---------------------------
+    Total                                     12.633ns (7.430ns logic, 5.203ns route)
+                                                       (58.8% logic, 41.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     7.370ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i_lcd_driver/counter_4 (FF)
+  Destination:          i_lcd_driver/counter_24 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      12.627ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.003ns (0.009 - 0.012)
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: i_lcd_driver/counter_4 to i_lcd_driver/counter_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X50Y10.YQ      Tcko                  0.652   i_lcd_driver/counter<17>
+                                                       i_lcd_driver/counter_4
+    SLICE_X51Y6.F3       net (fanout=2)        0.628   i_lcd_driver/counter<4>
+    SLICE_X51Y6.COUT     Topcyf                1.162   i_lcd_driver/state_add0000<4>
+                                                       i_lcd_driver/counter<4>_rt
+                                                       i_lcd_driver/Madd_state_add0000_cy<4>
+                                                       i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<16>
+                                                       i_lcd_driver/Madd_state_add0000_cy<16>
+                                                       i_lcd_driver/Madd_state_add0000_cy<17>
+    SLICE_X51Y13.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<17>
+    SLICE_X51Y13.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<18>
+                                                       i_lcd_driver/Madd_state_add0000_cy<18>
+                                                       i_lcd_driver/Madd_state_add0000_cy<19>
+    SLICE_X51Y14.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<19>
+    SLICE_X51Y14.Y       Tciny                 0.869   i_lcd_driver/state_add0000<20>
+                                                       i_lcd_driver/Madd_state_add0000_cy<20>
+                                                       i_lcd_driver/Madd_state_add0000_xor<21>
+    SLICE_X53Y10.G1      net (fanout=5)        1.088   i_lcd_driver/state_add0000<21>
+    SLICE_X53Y10.COUT    Topcyg                1.001   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_lut<7>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>_1
+    SLICE_X53Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+    SLICE_X53Y11.XB      Tcinxb                0.404   i_lcd_driver/state_cmp_ge0002
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<8>_1
+    SLICE_X53Y23.F3      net (fanout=6)        1.302   i_lcd_driver/state_cmp_ge0002
+    SLICE_X53Y23.X       Tilo                  0.704   i_lcd_driver/state_FSM_FFd1
+                                                       i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y12.G4      net (fanout=2)        1.146   i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y12.Y       Tilo                  0.759   i_lcd_driver/counter<5>
+                                                       i_lcd_driver/counter_mux0001<0>325
+    SLICE_X50Y17.G2      net (fanout=13)       1.194   N01
+    SLICE_X50Y17.CLK     Tgck                  0.892   i_lcd_driver/counter<25>
+                                                       i_lcd_driver/counter_mux0001<1>1
+                                                       i_lcd_driver/counter_24
+    -------------------------------------------------  ---------------------------
+    Total                                     12.627ns (7.269ns logic, 5.358ns route)
+                                                       (57.6% logic, 42.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point i_lcd_driver/counter_1 (SLICE_X50Y4.F3), 1382 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     7.256ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i_lcd_driver/counter_0 (FF)
+  Destination:          i_lcd_driver/counter_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      12.744ns (Levels of Logic = 16)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: i_lcd_driver/counter_0 to i_lcd_driver/counter_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X50Y4.YQ       Tcko                  0.652   i_lcd_driver/counter<1>
+                                                       i_lcd_driver/counter_0
+    SLICE_X51Y4.F2       net (fanout=2)        0.523   i_lcd_driver/counter<0>
+    SLICE_X51Y4.COUT     Topcyf                1.162   i_lcd_driver/state_add0000<0>
+                                                       i_lcd_driver/Madd_state_add0000_lut<0>_INV_0
+                                                       i_lcd_driver/Madd_state_add0000_cy<0>
+                                                       i_lcd_driver/Madd_state_add0000_cy<1>
+    SLICE_X51Y5.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<1>
+    SLICE_X51Y5.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<2>
+                                                       i_lcd_driver/Madd_state_add0000_cy<2>
+                                                       i_lcd_driver/Madd_state_add0000_cy<3>
+    SLICE_X51Y6.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<3>
+    SLICE_X51Y6.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<4>
+                                                       i_lcd_driver/Madd_state_add0000_cy<4>
+                                                       i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<16>
+                                                       i_lcd_driver/Madd_state_add0000_cy<16>
+                                                       i_lcd_driver/Madd_state_add0000_cy<17>
+    SLICE_X51Y13.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<17>
+    SLICE_X51Y13.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<18>
+                                                       i_lcd_driver/Madd_state_add0000_cy<18>
+                                                       i_lcd_driver/Madd_state_add0000_cy<19>
+    SLICE_X51Y14.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<19>
+    SLICE_X51Y14.Y       Tciny                 0.869   i_lcd_driver/state_add0000<20>
+                                                       i_lcd_driver/Madd_state_add0000_cy<20>
+                                                       i_lcd_driver/Madd_state_add0000_xor<21>
+    SLICE_X53Y10.G1      net (fanout=5)        1.088   i_lcd_driver/state_add0000<21>
+    SLICE_X53Y10.COUT    Topcyg                1.001   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_lut<7>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>_1
+    SLICE_X53Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+    SLICE_X53Y11.XB      Tcinxb                0.404   i_lcd_driver/state_cmp_ge0002
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<8>_1
+    SLICE_X53Y23.F3      net (fanout=6)        1.302   i_lcd_driver/state_cmp_ge0002
+    SLICE_X53Y23.X       Tilo                  0.704   i_lcd_driver/state_FSM_FFd1
+                                                       i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y14.G4      net (fanout=2)        0.893   i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y14.Y       Tilo                  0.759   i_lcd_driver/counter<16>
+                                                       i_lcd_driver/counter_mux0001<0>325_1
+    SLICE_X50Y4.F3       net (fanout=13)       1.433   i_lcd_driver/counter_mux0001<0>325
+    SLICE_X50Y4.CLK      Tfck                  0.892   i_lcd_driver/counter<1>
+                                                       i_lcd_driver/counter_mux0001<24>1
+                                                       i_lcd_driver/counter_1
+    -------------------------------------------------  ---------------------------
+    Total                                     12.744ns (7.505ns logic, 5.239ns route)
+                                                       (58.9% logic, 41.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     7.381ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i_lcd_driver/counter_0 (FF)
+  Destination:          i_lcd_driver/counter_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      12.619ns (Levels of Logic = 14)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: i_lcd_driver/counter_0 to i_lcd_driver/counter_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X50Y4.YQ       Tcko                  0.652   i_lcd_driver/counter<1>
+                                                       i_lcd_driver/counter_0
+    SLICE_X51Y4.F2       net (fanout=2)        0.523   i_lcd_driver/counter<0>
+    SLICE_X51Y4.COUT     Topcyf                1.162   i_lcd_driver/state_add0000<0>
+                                                       i_lcd_driver/Madd_state_add0000_lut<0>_INV_0
+                                                       i_lcd_driver/Madd_state_add0000_cy<0>
+                                                       i_lcd_driver/Madd_state_add0000_cy<1>
+    SLICE_X51Y5.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<1>
+    SLICE_X51Y5.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<2>
+                                                       i_lcd_driver/Madd_state_add0000_cy<2>
+                                                       i_lcd_driver/Madd_state_add0000_cy<3>
+    SLICE_X51Y6.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<3>
+    SLICE_X51Y6.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<4>
+                                                       i_lcd_driver/Madd_state_add0000_cy<4>
+                                                       i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.Y       Tciny                 0.869   i_lcd_driver/state_add0000<16>
+                                                       i_lcd_driver/Madd_state_add0000_cy<16>
+                                                       i_lcd_driver/Madd_state_add0000_xor<17>
+    SLICE_X53Y10.F1      net (fanout=5)        1.038   i_lcd_driver/state_add0000<17>
+    SLICE_X53Y10.COUT    Topcyf                1.162   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_lut<6>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<6>_1
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>_1
+    SLICE_X53Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+    SLICE_X53Y11.XB      Tcinxb                0.404   i_lcd_driver/state_cmp_ge0002
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<8>_1
+    SLICE_X53Y23.F3      net (fanout=6)        1.302   i_lcd_driver/state_cmp_ge0002
+    SLICE_X53Y23.X       Tilo                  0.704   i_lcd_driver/state_FSM_FFd1
+                                                       i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y14.G4      net (fanout=2)        0.893   i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y14.Y       Tilo                  0.759   i_lcd_driver/counter<16>
+                                                       i_lcd_driver/counter_mux0001<0>325_1
+    SLICE_X50Y4.F3       net (fanout=13)       1.433   i_lcd_driver/counter_mux0001<0>325
+    SLICE_X50Y4.CLK      Tfck                  0.892   i_lcd_driver/counter<1>
+                                                       i_lcd_driver/counter_mux0001<24>1
+                                                       i_lcd_driver/counter_1
+    -------------------------------------------------  ---------------------------
+    Total                                     12.619ns (7.430ns logic, 5.189ns route)
+                                                       (58.9% logic, 41.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     7.387ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i_lcd_driver/counter_4 (FF)
+  Destination:          i_lcd_driver/counter_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      12.613ns (Levels of Logic = 14)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CLK_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: i_lcd_driver/counter_4 to i_lcd_driver/counter_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X50Y10.YQ      Tcko                  0.652   i_lcd_driver/counter<17>
+                                                       i_lcd_driver/counter_4
+    SLICE_X51Y6.F3       net (fanout=2)        0.628   i_lcd_driver/counter<4>
+    SLICE_X51Y6.COUT     Topcyf                1.162   i_lcd_driver/state_add0000<4>
+                                                       i_lcd_driver/counter<4>_rt
+                                                       i_lcd_driver/Madd_state_add0000_cy<4>
+                                                       i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<5>
+    SLICE_X51Y7.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<6>
+                                                       i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<7>
+    SLICE_X51Y8.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<8>
+                                                       i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.CIN      net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<9>
+    SLICE_X51Y9.COUT     Tbyp                  0.118   i_lcd_driver/state_add0000<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<10>
+                                                       i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<11>
+    SLICE_X51Y10.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<12>
+                                                       i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<13>
+    SLICE_X51Y11.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<14>
+                                                       i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<15>
+    SLICE_X51Y12.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<16>
+                                                       i_lcd_driver/Madd_state_add0000_cy<16>
+                                                       i_lcd_driver/Madd_state_add0000_cy<17>
+    SLICE_X51Y13.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<17>
+    SLICE_X51Y13.COUT    Tbyp                  0.118   i_lcd_driver/state_add0000<18>
+                                                       i_lcd_driver/Madd_state_add0000_cy<18>
+                                                       i_lcd_driver/Madd_state_add0000_cy<19>
+    SLICE_X51Y14.CIN     net (fanout=1)        0.000   i_lcd_driver/Madd_state_add0000_cy<19>
+    SLICE_X51Y14.Y       Tciny                 0.869   i_lcd_driver/state_add0000<20>
+                                                       i_lcd_driver/Madd_state_add0000_cy<20>
+                                                       i_lcd_driver/Madd_state_add0000_xor<21>
+    SLICE_X53Y10.G1      net (fanout=5)        1.088   i_lcd_driver/state_add0000<21>
+    SLICE_X53Y10.COUT    Topcyg                1.001   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_lut<7>2
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>_1
+    SLICE_X53Y11.CIN     net (fanout=1)        0.000   i_lcd_driver/Mcompar_state_cmp_ge0000_cy<7>2
+    SLICE_X53Y11.XB      Tcinxb                0.404   i_lcd_driver/state_cmp_ge0002
+                                                       i_lcd_driver/Mcompar_state_cmp_ge0000_cy<8>_1
+    SLICE_X53Y23.F3      net (fanout=6)        1.302   i_lcd_driver/state_cmp_ge0002
+    SLICE_X53Y23.X       Tilo                  0.704   i_lcd_driver/state_FSM_FFd1
+                                                       i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y14.G4      net (fanout=2)        0.893   i_lcd_driver/counter_mux0001<0>318
+    SLICE_X50Y14.Y       Tilo                  0.759   i_lcd_driver/counter<16>
+                                                       i_lcd_driver/counter_mux0001<0>325_1
+    SLICE_X50Y4.F3       net (fanout=13)       1.433   i_lcd_driver/counter_mux0001<0>325
+    SLICE_X50Y4.CLK      Tfck                  0.892   i_lcd_driver/counter<1>
+                                                       i_lcd_driver/counter_mux0001<24>1
+                                                       i_lcd_driver/counter_1
+    -------------------------------------------------  ---------------------------
+    Total                                     12.613ns (7.269ns logic, 5.344ns route)
+                                                       (57.6% logic, 42.4% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: NET "CLK_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point i_lcd_driver/state_FSM_FFd8 (SLICE_X54Y25.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.057ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               i_lcd_driver/state_FSM_FFd9 (FF)
+  Destination:          i_lcd_driver/state_FSM_FFd8 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.058ns (Levels of Logic = 0)
+  Clock Path Skew:      0.001ns (0.004 - 0.003)
+  Source Clock:         CLK_BUFGP rising at 20.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: i_lcd_driver/state_FSM_FFd9 to i_lcd_driver/state_FSM_FFd8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X55Y26.YQ      Tcko                  0.470   i_lcd_driver/state_FSM_FFd10
+                                                       i_lcd_driver/state_FSM_FFd9
+    SLICE_X54Y25.BY      net (fanout=6)        0.436   i_lcd_driver/state_FSM_FFd9
+    SLICE_X54Y25.CLK     Tckdi       (-Th)    -0.152   i_lcd_driver/state_FSM_FFd8
+                                                       i_lcd_driver/state_FSM_FFd8
+    -------------------------------------------------  ---------------------------
+    Total                                      1.058ns (0.622ns logic, 0.436ns route)
+                                                       (58.8% logic, 41.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point i_lcd_driver/state_FSM_FFd9 (SLICE_X55Y26.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.236ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               i_lcd_driver/state_FSM_FFd10 (FF)
+  Destination:          i_lcd_driver/state_FSM_FFd9 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.236ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CLK_BUFGP rising at 20.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: i_lcd_driver/state_FSM_FFd10 to i_lcd_driver/state_FSM_FFd9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X55Y26.XQ      Tcko                  0.473   i_lcd_driver/state_FSM_FFd10
+                                                       i_lcd_driver/state_FSM_FFd10
+    SLICE_X55Y26.BY      net (fanout=9)        0.628   i_lcd_driver/state_FSM_FFd10
+    SLICE_X55Y26.CLK     Tckdi       (-Th)    -0.135   i_lcd_driver/state_FSM_FFd10
+                                                       i_lcd_driver/state_FSM_FFd9
+    -------------------------------------------------  ---------------------------
+    Total                                      1.236ns (0.608ns logic, 0.628ns route)
+                                                       (49.2% logic, 50.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point i_lcd_driver/state_FSM_FFd13 (SLICE_X51Y27.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.283ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               i_lcd_driver/state_FSM_FFd13 (FF)
+  Destination:          i_lcd_driver/state_FSM_FFd13 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.283ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CLK_BUFGP rising at 20.000ns
+  Destination Clock:    CLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: i_lcd_driver/state_FSM_FFd13 to i_lcd_driver/state_FSM_FFd13
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y27.YQ      Tcko                  0.470   i_lcd_driver/state_FSM_FFd13
+                                                       i_lcd_driver/state_FSM_FFd13
+    SLICE_X51Y27.BY      net (fanout=5)        0.678   i_lcd_driver/state_FSM_FFd13
+    SLICE_X51Y27.CLK     Tckdi       (-Th)    -0.135   i_lcd_driver/state_FSM_FFd13
+                                                       i_lcd_driver/state_FSM_FFd13
+    -------------------------------------------------  ---------------------------
+    Total                                      1.283ns (0.605ns logic, 0.678ns route)
+                                                       (47.2% logic, 52.8% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: NET "CLK_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 18.348ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.826ns (Tcl)
+  Physical resource: i_lcd_driver/sLcdDat<2>/CLK
+  Logical resource: i_lcd_driver/sLcdDat_2/CK
+  Location pin: SLICE_X40Y42.CLK
+  Clock network: CLK_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.348ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.826ns (Tch)
+  Physical resource: i_lcd_driver/sLcdDat<2>/CLK
+  Logical resource: i_lcd_driver/sLcdDat_2/CK
+  Location pin: SLICE_X40Y42.CLK
+  Clock network: CLK_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.348ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.652ns (605.327MHz) (Tcp)
+  Physical resource: i_lcd_driver/sLcdDat<2>/CLK
+  Logical resource: i_lcd_driver/sLcdDat_2/CK
+  Location pin: SLICE_X40Y42.CLK
+  Clock network: CLK_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |   13.288|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 61121 paths, 0 nets, and 1174 connections
+
+Design statistics:
+   Minimum period:  13.288ns{1}   (Maximum frequency:  75.256MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Tue Jun 29 15:35:05 2021 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 141 MB
+
+
+

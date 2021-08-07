@@ -1,0 +1,41 @@
+module full_add_9bit_test ();
+reg[8:0] At,Bt;
+reg CarryinT;
+wire[8:0] sumt;
+wire CarryoutT;
+full_adder9 FA90(.Carryout(CarryoutT),.sum(sumt),.A(At),.B(Bt),.Carryin(CarryinT));
+initial
+begin
+At=9'b000000000;
+Bt=9'b000000000;
+CarryinT=1'b0;
+#10 
+At=9'b000000001;
+Bt=9'b000000000;
+#10
+At=9'b000000001;
+Bt=9'b000000001;
+#10
+At=9'b000000011;
+Bt=9'b000010001;
+#10
+At=9'b000000011;
+Bt=9'b000100011;
+#100
+At=9'b000100011;
+Bt=9'b000010011;
+#100
+At=9'b110000011;
+Bt=9'b010000011;
+#100
+At=9'b100000111;
+Bt=9'b100000011;
+#100
+At=9'b100000111;
+Bt=9'b100000011;
+#40
+At=9'b001010010;
+Bt=9'b010101011;
+end
+endmodule
+

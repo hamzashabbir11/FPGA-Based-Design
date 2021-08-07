@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "E:/digitalclock/test_watch.xst" -ofn "E:/digitalclock/test_watch.syr" 

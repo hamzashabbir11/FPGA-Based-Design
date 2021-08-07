@@ -1,0 +1,53 @@
+module counter (clk, reset, enable, count_val, over_flow);
+input clk, reset, enable;
+parameter Bits=4;
+parameter Max=9;
+output[Bits-1:0] count_val;
+output over_flow;
+reg[Bits-1:0] count_val;
+reg over_flow;
+
+always@(posedge clk)
+if(reset) begin
+count_val=0;
+over_flow=0;
+end
+else if(enable)
+if(count_val==Max) begin
+count_val=0;
+over_flow=1;
+end
+else begin
+
+count_val=count_val+1;
+over_flow=0;
+end
+endmodule
+
+module digital_watch(clk, reset_1, enable, seconds_most, seconds_least,min_least,min_most,hours_least,hours_most);
+input clk, reset_1, enable;
+output[3:0] seconds_least, seconds_most, min_least, min_most, hours_least, hours_most;
+wire w1,w2,w3,w4,w5,w6, reset;
+reg reset_2;
+assign reset=reset_1 || reset_2;
+always@(posedge clk) begin
+if(hours_least==4'd4 && hours_most==4'd2)
+reset_2=1'b1;
+else
+reset_2=1'b0;
+end
+counter #(2,50000000) C0(.clk(clk), .reset(reset), .enable(enable), .over_flow(w1));
+counter #(4,9) C1(.clk(clk), .reset(reset), .enable(w1), .count_val(seconds_least[3:0]), .over_flow(w2));
+counter #(4,5) C2(.clk(clk), .reset(reset), .enable(w2), .count_val(seconds_most[3:0]), .over_flow(w3));
+counter #(4,9) C3(.clk(clk), .reset(reset), .enable(w3), .count_val(min_least[3:0]), .over_flow(w4));
+counter #(4,5) C4(.clk(clk), .reset(reset), .enable(w4), .count_val(min_most[3:0]), .over_flow(w5));
+counter #(4,9) C5(.clk(clk), .reset(reset), .enable(w5), .count_val(hours_least[3:0]), .over_flow(w6));
+counter #(4,2) C6(.clk(clk), .reset(reset), .enable(w6), .count_val(hours_most[3:0]));
+endmodule
+
+
+
+
+
+
+

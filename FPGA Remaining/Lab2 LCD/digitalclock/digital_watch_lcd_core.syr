@@ -1,0 +1,653 @@
+Release 14.2 - xst P.28xd (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.28 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.28 secs
+ 
+--> Reading design: digital_watch_lcd_core.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "digital_watch_lcd_core.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "digital_watch_lcd_core"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : digital_watch_lcd_core
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+WARNING:HDLCompilers:176 - Include directory \Users\Students\Desktop\Hamza\ does not exist
+Compiling verilog file "C:/Users/Students/Desktop/Hamza/Digital_Watch.v" in library work
+Module <counter> compiled
+Compiling verilog file "LCDTopModule.v" in library work
+Module <digital_watch> compiled
+Module <digital_watch_lcd_core> compiled
+No errors in compilation
+Analysis of file <"digital_watch_lcd_core.prj"> succeeded.
+ 
+Compiling vhdl file "C:/Users/Students/Desktop/3_lcd_driver_vhd.vhd" in Library work.
+Architecture behavioral of Entity lcd_driver is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <digital_watch_lcd_core> in library <work>.
+
+Analyzing hierarchy for entity <lcd_driver> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for module <digital_watch> in library <work>.
+
+Analyzing hierarchy for module <counter> in library <work> with parameters.
+	Bits = "00000000000000000000000000000010"
+	Max = "00000010111110101111000010000000"
+
+Analyzing hierarchy for module <counter> in library <work> with parameters.
+	Bits = "00000000000000000000000000000100"
+	Max = "00000000000000000000000000001001"
+
+Analyzing hierarchy for module <counter> in library <work> with parameters.
+	Bits = "00000000000000000000000000000100"
+	Max = "00000000000000000000000000000101"
+
+Analyzing hierarchy for module <counter> in library <work> with parameters.
+	Bits = "00000000000000000000000000000100"
+	Max = "00000000000000000000000000000010"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <digital_watch_lcd_core>.
+Module <digital_watch_lcd_core> is correct for synthesis.
+ 
+Analyzing Entity <lcd_driver> in library <work> (Architecture <behavioral>).
+Entity <lcd_driver> analyzed. Unit <lcd_driver> generated.
+
+Analyzing module <digital_watch> in library <work>.
+Module <digital_watch> is correct for synthesis.
+ 
+Analyzing module <counter.1> in library <work>.
+	Bits = 32'sb00000000000000000000000000000010
+	Max = 32'sb00000010111110101111000010000000
+Module <counter.1> is correct for synthesis.
+ 
+Analyzing module <counter.2> in library <work>.
+	Bits = 32'sb00000000000000000000000000000100
+	Max = 32'sb00000000000000000000000000001001
+Module <counter.2> is correct for synthesis.
+ 
+Analyzing module <counter.3> in library <work>.
+	Bits = 32'sb00000000000000000000000000000100
+	Max = 32'sb00000000000000000000000000000101
+Module <counter.3> is correct for synthesis.
+ 
+Analyzing module <counter.4> in library <work>.
+	Bits = 32'sb00000000000000000000000000000100
+	Max = 32'sb00000000000000000000000000000010
+Module <counter.4> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <over_flow> in unit <counter_1> has a constant value of 0 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <lcd_driver>.
+    Related source file is "C:/Users/Students/Desktop/3_lcd_driver_vhd.vhd".
+INFO:Xst:1799 - State write_addrh3 is never reached in FSM <state>.
+INFO:Xst:1799 - State write_addrl3 is never reached in FSM <state>.
+INFO:Xst:1799 - State write_datah1 is never reached in FSM <state>.
+INFO:Xst:1799 - State write_datal1 is never reached in FSM <state>.
+INFO:Xst:1799 - State s5 is never reached in FSM <charState>.
+INFO:Xst:1799 - State s6 is never reached in FSM <charState>.
+INFO:Xst:1799 - State s7 is never reached in FSM <charState>.
+INFO:Xst:1799 - State s8 is never reached in FSM <charState>.
+INFO:Xst:1799 - State s9 is never reached in FSM <charState>.
+INFO:Xst:1799 - State s10 is never reached in FSM <charState>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 13                                             |
+    | Transitions        | 27                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 14                                             |
+    | Clock              | Clk                       (rising_edge)        |
+    | Power Up State     | init                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <charState>.
+    -----------------------------------------------------------------------
+    | States             | 23                                             |
+    | Transitions        | 38                                             |
+    | Inputs             | 8                                              |
+    | Outputs            | 22                                             |
+    | Clock              | Clk                       (rising_edge)        |
+    | Power Up State     | i0                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit tristate buffer for signal <lcd_data>.
+    Found 32-bit adder for signal <add0000$add0000> created at line 114.
+    Found 8-bit comparator greatequal for signal <charState$cmp_ge0000> created at line 230.
+    Found 33-bit comparator greater for signal <charState$cmp_gt0000> created at line 115.
+    Found 33-bit comparator greater for signal <charState$cmp_gt0001> created at line 127.
+    Found 33-bit comparator greater for signal <charState$cmp_gt0002> created at line 139.
+    Found 32-bit comparator greater for signal <charState$cmp_gt0003> created at line 222.
+    Found 33-bit comparator greater for signal <charState$cmp_gt0004> created at line 269.
+    Found 32-bit register for signal <Cnt>.
+    Found 26-bit register for signal <counter>.
+    Found 8-bit register for signal <i>.
+    Found 8-bit adder for signal <i$share0000> created at line 106.
+    Found 8-bit register for signal <int_addr>.
+    Found 8-bit register for signal <int_data>.
+    Found 8-bit register for signal <sLcdAdr>.
+    Found 8-bit register for signal <sLcdDat>.
+    Found 1-bit register for signal <sLcdWR>.
+    Found 26-bit adder for signal <state$add0000> created at line 297.
+    Found 26-bit comparator greatequal for signal <state$cmp_ge0000> created at line 298.
+    Found 26-bit comparator greatequal for signal <state$cmp_ge0001> created at line 318.
+    Found 26-bit comparator greatequal for signal <state$cmp_ge0002> created at line 349.
+    Found 26-bit comparator greatequal for signal <state$cmp_ge0003> created at line 361.
+    Summary:
+	inferred   2 Finite State Machine(s).
+	inferred  99 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred  10 Comparator(s).
+	inferred   4 Tristate(s).
+Unit <lcd_driver> synthesized.
+
+
+Synthesizing Unit <counter_1>.
+    Related source file is "C:/Users/Students/Desktop/Hamza/Digital_Watch.v".
+    Found 2-bit up counter for signal <count_val>.
+    Summary:
+	inferred   1 Counter(s).
+Unit <counter_1> synthesized.
+
+
+Synthesizing Unit <counter_2>.
+    Related source file is "C:/Users/Students/Desktop/Hamza/Digital_Watch.v".
+    Found 4-bit up counter for signal <count_val>.
+    Found 1-bit register for signal <over_flow>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <counter_2> synthesized.
+
+
+Synthesizing Unit <counter_3>.
+    Related source file is "C:/Users/Students/Desktop/Hamza/Digital_Watch.v".
+    Found 4-bit up counter for signal <count_val>.
+    Found 1-bit register for signal <over_flow>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <counter_3> synthesized.
+
+
+Synthesizing Unit <counter_4>.
+    Related source file is "C:/Users/Students/Desktop/Hamza/Digital_Watch.v".
+    Found 4-bit up counter for signal <count_val>.
+    Found 1-bit register for signal <over_flow>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <counter_4> synthesized.
+
+
+Synthesizing Unit <digital_watch>.
+    Related source file is "C:/Users/Students/Desktop/Hamza/Digital_Watch.v".
+    Found 1-bit register for signal <reset_2>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <digital_watch> synthesized.
+
+
+Synthesizing Unit <digital_watch_lcd_core>.
+    Related source file is "LCDTopModule.v".
+Unit <digital_watch_lcd_core> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 26-bit adder                                          : 1
+ 32-bit adder                                          : 1
+ 8-bit adder                                           : 1
+# Counters                                             : 7
+ 2-bit up counter                                      : 1
+ 4-bit up counter                                      : 6
+# Registers                                            : 15
+ 1-bit register                                        : 8
+ 26-bit register                                       : 1
+ 32-bit register                                       : 1
+ 8-bit register                                        : 5
+# Comparators                                          : 10
+ 26-bit comparator greatequal                          : 4
+ 32-bit comparator greater                             : 1
+ 33-bit comparator greater                             : 4
+ 8-bit comparator greatequal                           : 1
+# Tristates                                            : 1
+ 4-bit tristate buffer                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <i_lcd_driver/charState/FSM> on signal <charState[1:23]> with one-hot encoding.
+----------------------------------
+ State | Encoding
+----------------------------------
+ i0    | 00000000000000000000001
+ i1    | 00000000000000000000010
+ i2    | 00000000000000000000100
+ i3    | 00000000000000000001000
+ i4    | 00000000000000000010000
+ i5    | 00000000000000000100000
+ i6    | 00000000000000001000000
+ i7    | 00000000000000010000000
+ i8    | 00000000000000100000000
+ i9    | 00000000000001000000000
+ i10   | 00000000000010000000000
+ i11   | 00000000000100000000000
+ i12   | 00000000001000000000000
+ i13   | 00000000010000000000000
+ i14   | 00000000100000000000000
+ i15   | 00000001000000000000000
+ i16   | 00000010000000000000000
+ s0    | 00001000000000000000000
+ s1    | 00000100000000000000000
+ s2    | 00010000000000000000000
+ s3    | 01000000000000000000000
+ s4    | 10000000000000000000000
+ s5    | unreached
+ s6    | unreached
+ s7    | unreached
+ s8    | unreached
+ s9    | unreached
+ s10   | unreached
+ s11   | 00100000000000000000000
+----------------------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <i_lcd_driver/state/FSM> on signal <state[1:13]> with one-hot encoding.
+--------------------------------
+ State         | Encoding
+--------------------------------
+ init          | 0000000000001
+ wait_for_data | 0000000000010
+ write_addrh1  | 0000000000100
+ write_addrh2  | 0000000001000
+ write_addrh3  | unreached
+ write_addrl1  | 0000000010000
+ write_addrl2  | 0000000100000
+ write_addrl3  | unreached
+ chk_busyi1    | 0000001000000
+ chk_busyi2    | 0000100000000
+ write_datah1  | unreached
+ write_datah2  | 0000010000000
+ write_datah3  | 0001000000000
+ write_datal1  | unreached
+ write_datal2  | 0010000000000
+ write_datal3  | 0100000000000
+ chk_busyd1    | 1000000000000
+--------------------------------
+WARNING:Xst:1426 - The value init of the FF/Latch FFd23 hinder the constant cleaning in the block FSM.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1710 - FF/Latch <sLcdDat_7> (without init value) has a constant value of 0 in block <i_lcd_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <over_flow> (without init value) has a constant value of 0 in block <C1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <over_flow> (without init value) has a constant value of 0 in block <C2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <over_flow> (without init value) has a constant value of 0 in block <C3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <over_flow> (without init value) has a constant value of 0 in block <C4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <over_flow> (without init value) has a constant value of 0 in block <C5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <int_data_7> (without init value) has a constant value of 0 in block <i_lcd_driver>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# Adders/Subtractors                                   : 3
+ 26-bit adder                                          : 1
+ 32-bit adder                                          : 1
+ 8-bit adder                                           : 1
+# Counters                                             : 7
+ 2-bit up counter                                      : 1
+ 4-bit up counter                                      : 6
+# Registers                                            : 106
+ Flip-Flops                                            : 106
+# Comparators                                          : 10
+ 26-bit comparator greatequal                          : 4
+ 32-bit comparator greater                             : 1
+ 33-bit comparator greater                             : 4
+ 8-bit comparator greatequal                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch FSM_FFd23 hinder the constant cleaning in the block FSM_1-parent.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1710 - FF/Latch <sLcdDat_7> (without init value) has a constant value of 0 in block <lcd_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <int_data_7> (without init value) has a constant value of 0 in block <lcd_driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <C1/over_flow> (without init value) has a constant value of 0 in block <digital_watch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <C2/over_flow> (without init value) has a constant value of 0 in block <digital_watch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <C3/over_flow> (without init value) has a constant value of 0 in block <digital_watch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <C4/over_flow> (without init value) has a constant value of 0 in block <digital_watch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <C5/over_flow> (without init value) has a constant value of 0 in block <digital_watch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <C6/over_flow> of sequential type is unconnected in block <digital_watch>.
+INFO:Xst:2146 - In block <digital_watch>, Counter <C1/count_val> <C5/count_val> <C3/count_val> <C6/count_val> <C4/count_val> <C2/count_val> are equivalent, XST will keep only <C1/count_val>.
+WARNING:Xst:1710 - FF/Latch <C1/count_val_0> (without init value) has a constant value of 0 in block <digital_watch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <C1/count_val_1> (without init value) has a constant value of 0 in block <digital_watch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <C1/count_val_2> (without init value) has a constant value of 0 in block <digital_watch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <C1/count_val_3> (without init value) has a constant value of 0 in block <digital_watch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <reset_2> is unconnected in block <digital_watch>.
+
+Optimizing unit <digital_watch_lcd_core> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block digital_watch_lcd_core, actual ratio is 4.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 133
+ Flip-Flops                                            : 133
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : digital_watch_lcd_core.ngr
+Top Level Output File Name         : digital_watch_lcd_core
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 19
+
+Cell Usage :
+# BELS                             : 575
+#      GND                         : 1
+#      INV                         : 18
+#      LUT1                        : 79
+#      LUT2                        : 40
+#      LUT2_D                      : 1
+#      LUT3                        : 27
+#      LUT3_D                      : 3
+#      LUT3_L                      : 2
+#      LUT4                        : 174
+#      LUT4_D                      : 8
+#      LUT4_L                      : 3
+#      MUXCY                       : 156
+#      MUXF5                       : 4
+#      VCC                         : 1
+#      XORCY                       : 58
+# FlipFlops/Latches                : 133
+#      FD                          : 89
+#      FDE                         : 21
+#      FDR                         : 2
+#      FDS                         : 12
+#      FDSE                        : 9
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 16
+#      OBUF                        : 12
+#      OBUFT                       : 4
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      190  out of   4656     4%  
+ Number of Slice Flip Flops:            133  out of   9312     1%  
+ Number of 4 input LUTs:                355  out of   9312     3%  
+ Number of IOs:                          19
+ Number of bonded IOBs:                  17  out of    232     7%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | BUFGP                  | 133   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 11.504ns (Maximum Frequency: 86.926MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 9.410ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 11.504ns (frequency: 86.926MHz)
+  Total number of paths / destination ports: 61121 / 176
+-------------------------------------------------------------------------
+Delay:               11.504ns (Levels of Logic = 30)
+  Source:            i_lcd_driver/counter_1 (FF)
+  Destination:       i_lcd_driver/counter_25 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: i_lcd_driver/counter_1 to i_lcd_driver/counter_25
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.591   0.622  i_lcd_driver/counter_1 (i_lcd_driver/counter_1)
+     LUT1:I0->O            1   0.704   0.000  i_lcd_driver/Madd_state_add0000_cy<1>_rt (i_lcd_driver/Madd_state_add0000_cy<1>_rt)
+     MUXCY:S->O            1   0.464   0.000  i_lcd_driver/Madd_state_add0000_cy<1> (i_lcd_driver/Madd_state_add0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<2> (i_lcd_driver/Madd_state_add0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<3> (i_lcd_driver/Madd_state_add0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<4> (i_lcd_driver/Madd_state_add0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<5> (i_lcd_driver/Madd_state_add0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<6> (i_lcd_driver/Madd_state_add0000_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<7> (i_lcd_driver/Madd_state_add0000_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<8> (i_lcd_driver/Madd_state_add0000_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<9> (i_lcd_driver/Madd_state_add0000_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<10> (i_lcd_driver/Madd_state_add0000_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<11> (i_lcd_driver/Madd_state_add0000_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<12> (i_lcd_driver/Madd_state_add0000_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<13> (i_lcd_driver/Madd_state_add0000_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<14> (i_lcd_driver/Madd_state_add0000_cy<14>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<15> (i_lcd_driver/Madd_state_add0000_cy<15>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<16> (i_lcd_driver/Madd_state_add0000_cy<16>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<17> (i_lcd_driver/Madd_state_add0000_cy<17>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<18> (i_lcd_driver/Madd_state_add0000_cy<18>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<19> (i_lcd_driver/Madd_state_add0000_cy<19>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<20> (i_lcd_driver/Madd_state_add0000_cy<20>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<21> (i_lcd_driver/Madd_state_add0000_cy<21>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<22> (i_lcd_driver/Madd_state_add0000_cy<22>)
+     MUXCY:CI->O           1   0.059   0.000  i_lcd_driver/Madd_state_add0000_cy<23> (i_lcd_driver/Madd_state_add0000_cy<23>)
+     XORCY:CI->O           5   0.804   0.808  i_lcd_driver/Madd_state_add0000_xor<24> (i_lcd_driver/state_add0000<24>)
+     LUT2:I0->O            1   0.704   0.000  i_lcd_driver/Mcompar_state_cmp_ge0000_lut<8>1 (i_lcd_driver/Mcompar_state_cmp_ge0000_lut<8>1)
+     MUXCY:S->O           11   0.736   0.937  i_lcd_driver/Mcompar_state_cmp_ge0000_cy<8>_0 (i_lcd_driver/state_cmp_ge0001)
+     LUT4:I3->O            2   0.704   0.451  i_lcd_driver/counter_mux0001<0>310 (i_lcd_driver/counter_mux0001<0>310)
+     LUT4_D:I3->O         12   0.704   0.965  i_lcd_driver/counter_mux0001<0>325 (N01)
+     LUT4:I3->O            1   0.704   0.000  i_lcd_driver/counter_mux0001<1>1 (i_lcd_driver/counter_mux0001<1>)
+     FD:D                      0.308          i_lcd_driver/counter_24
+    ----------------------------------------
+    Total                     11.504ns (7.721ns logic, 3.783ns route)
+                                       (67.1% logic, 32.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 107 / 6
+-------------------------------------------------------------------------
+Offset:              9.410ns (Levels of Logic = 5)
+  Source:            i_lcd_driver/state_FSM_FFd11 (FF)
+  Destination:       SF_D<11> (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: i_lcd_driver/state_FSM_FFd11 to SF_D<11>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              11   0.591   1.012  i_lcd_driver/state_FSM_FFd11 (i_lcd_driver/state_FSM_FFd11)
+     LUT3:I1->O            1   0.704   0.424  i_lcd_driver/lcd_data_mux0000<4>4_SW0 (N02)
+     LUT4:I3->O            2   0.704   0.451  i_lcd_driver/lcd_data_mux0000<4>4 (N16)
+     LUT4:I3->O            1   0.704   0.424  i_lcd_driver/lcd_data_mux0000<7>_SW1 (N50)
+     LUT4:I3->O            1   0.704   0.420  i_lcd_driver/lcd_data_mux0000<7> (SF_D_11_OBUFT)
+     OBUFT:I->O                3.272          SF_D_11_OBUFT (SF_D<11>)
+    ----------------------------------------
+    Total                      9.410ns (6.679ns logic, 2.731ns route)
+                                       (71.0% logic, 29.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 9.83 secs
+ 
+--> 
+
+Total memory usage is 247548 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   23 (   0 filtered)
+Number of infos    :   13 (   0 filtered)
+

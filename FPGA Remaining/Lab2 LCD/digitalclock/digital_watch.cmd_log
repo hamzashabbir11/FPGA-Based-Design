@@ -1,0 +1,28 @@
+xst -intstyle ise -ifn "E:/digitalclock/digital_watch.xst" -ofn "E:/digitalclock/digital_watch.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc UCF.ucf -p xc3s500e-fg320-4 digital_watch.ngc digital_watch.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc UCF.ucf -p xc3s500e-fg320-4 digital_watch.ngc digital_watch.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc UCF.ucf -p xc3s500e-fg320-4 digital_watch.ngc digital_watch.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc UCF.ucf -p xc3s500e-fg320-4 digital_watch.ngc digital_watch.ngd  
+xst -intstyle ise -ifn "E:/digitalclock/digital_watch.xst" -ofn "E:/digitalclock/digital_watch.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc UCF.ucf -p xc3s500e-fg320-4 digital_watch.ngc digital_watch.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc UCF.ucf -p xc3s500e-fg320-4 digital_watch.ngc digital_watch.ngd  
+xst -intstyle ise -ifn "E:/digitalclock/digital_watch.xst" -ofn "E:/digitalclock/digital_watch.syr" 
+xst -intstyle ise -ifn "E:/digitalclock/digital_watch.xst" -ofn "E:/digitalclock/digital_watch.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc UCF.ucf -p xc3s500e-fg320-4 digital_watch.ngc digital_watch.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o digital_watch_map.ncd digital_watch.ngd digital_watch.pcf 
+par -w -intstyle ise -ol high -t 1 digital_watch_map.ncd digital_watch.ncd digital_watch.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml digital_watch.twx digital_watch.ncd -o digital_watch.twr digital_watch.pcf -ucf UCF.ucf 
+xst -intstyle ise -ifn "E:/digitalclock/digital_watch.xst" -ofn "E:/digitalclock/digital_watch.syr" 
+xst -intstyle ise -ifn "E:/digitalclock/digital_watch.xst" -ofn "E:/digitalclock/digital_watch.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc UCF.ucf -p xc3s500e-fg320-4 digital_watch.ngc digital_watch.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o digital_watch_map.ncd digital_watch.ngd digital_watch.pcf 
+par -w -intstyle ise -ol high -t 1 digital_watch_map.ncd digital_watch.ncd digital_watch.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml digital_watch.twx digital_watch.ncd -o digital_watch.twr digital_watch.pcf -ucf UCF.ucf 
+xst -intstyle ise -ifn "E:/digitalclock/digital_watch.xst" -ofn "E:/digitalclock/digital_watch.syr" 
+xst -intstyle ise -ifn "E:/digitalclock/digital_watch.xst" -ofn "E:/digitalclock/digital_watch.syr" 
+xst -intstyle ise -ifn "E:/digitalclock/digital_watch.xst" -ofn "E:/digitalclock/digital_watch.syr" 
+xst -intstyle ise -ifn "E:/digitalclock/digital_watch.xst" -ofn "E:/digitalclock/digital_watch.syr" 
+xst -intstyle ise -ifn "E:/digitalclock/digital_watch.xst" -ofn "E:/digitalclock/digital_watch.syr" 
+xst -intstyle ise -ifn "E:/digitalclock/digital_watch.xst" -ofn "E:/digitalclock/digital_watch.syr" 
+xst -intstyle ise -ifn "E:/digitalclock/digital_watch.xst" -ofn "E:/digitalclock/digital_watch.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc UCF.ucf -p xc3s500e-fg320-4 digital_watch.ngc digital_watch.ngd  

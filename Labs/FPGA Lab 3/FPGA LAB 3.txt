@@ -1,0 +1,52 @@
+module BCDto7(O,A,B,C,D);
+input A,B,C,D;
+output [6:0]O;
+wire  nB,nC,nD,BD,NBD,CD,NCD,CnD,BnCD,nBC,BnC,BnD;
+not GnB(nB,B);		
+not GnC(nC,C);		
+not GnD(nD,D);		
+and GBD(BD,B,D);
+and GNBD(NBD,nB,nD);
+or a(O[0],A,C,BD,NBD);		
+and GNCD(NCD,nC,nD);
+and GCD(CD,C,D);
+or b(O[1],nB,NCD,CD);		
+or c(O[2],B,nC,D);		
+and GCnD(CnD,C,nD);
+and GBnCD(BnCD,B,nC,D);
+and GnBC(nBC,nB,C);
+or d(O[3],NBD,CnD,BnCD,nBC,A);		
+or e(O[4],NBD,CnD);		
+and GBnC(BnC,B,nC);
+and GBnD(BnD,B,nD);
+or f(O[5],A,NCD,BnC,BnD);		
+or g(O[6],A,BnC,nBC,CnD);		
+endmodule
+
+module BCD_to_7seg (A,B,C,D,a,b,c,d,e,f,g);
+input A,B,C,D;
+output a,b,c,d,e,f,g;
+assign a=A|C|(B&D)|(~B&~D);
+assign b=~B|(~C&~D)|(C&D);
+assign c=B|(~C)|D;
+assign d=(~B&~D)|(C&~D)|(B&~C&D)|(~B&C)|A;
+assign e=(~B&~D)|(C&~D);
+assign f=A|(~C&~D)|(B&~C)|(B&~D);
+assign g=(~B&C)|(C&~D)|(B&~C)|A;
+endmodule
+
+module bcd_to_7seg (A,B,C,D,a,b,c,d,e,f,g);
+input A,B,C,D;
+output a,b,c,d,e,f,g;
+reg a,b,c,d,e,f,g;
+always @ (A or B or C or D)
+begin
+a=A|C|(B&D)|(~B&~D);
+b=~B|(~C&~D)|(C&D);
+c=B|(~C)|D;
+d=(~B&~D)|(C&~D)|(B&~C&D)|(~B&C)|A;
+e=(~B&~D)|(C&~D);
+f=A|(~C&~D)|(B&~C)|(B&~D);
+g=(~B&C)|(C&~D)|(B&~C)|A;
+end 
+endmodule

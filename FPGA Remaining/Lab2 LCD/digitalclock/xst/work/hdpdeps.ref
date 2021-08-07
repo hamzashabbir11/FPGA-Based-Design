@@ -1,0 +1,7 @@
+V3 3
+FL C:/Users/Students/Desktop/3_lcd_driver_vhd.vhd 2021/04/29.20:47:14 P.28xd
+EN work/lcd_driver 1624962860 FL C:/Users/Students/Desktop/3_lcd_driver_vhd.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/std_logic_arith 1341906177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1341906179
+AR work/lcd_driver/behavioral 1624962861 \
+      FL C:/Users/Students/Desktop/3_lcd_driver_vhd.vhd EN work/lcd_driver 1624962860
